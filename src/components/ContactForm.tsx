@@ -23,7 +23,10 @@ export default function ContactForm() {
         body: JSON.stringify({ name, email, subject, message }),
       });
       const data = await res.json();
-      if (res.ok && !data.error) {
+      if (res.ok && data.mailto) {
+        window.location.href = data.mailto;
+        setStatus("success");
+      } else if (res.ok && !data.error) {
         setStatus("success");
         setName(""); setEmail(""); setSubject(""); setMessage("");
       } else {
