@@ -8,19 +8,19 @@ const AGENTS = [
 
 export default function Agents({ locale }: { locale: Locale }) {
   return (
-    <section id="agents" className="py-20 px-6 border-t border-[#dedee5]">
+    <section id="agents" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-t border-[#dedee5]">
       <div className="max-w-5xl mx-auto">
         <span className="text-xs font-semibold uppercase tracking-widest text-[#7132f5]">{t("agents.label", locale)}</span>
-        <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#101114] whitespace-pre-line">
+        <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#101114] whitespace-pre-line">
           {t("agents.title", locale)}
         </h2>
-        <p className="mt-4 text-[#686b82] leading-relaxed">{t("agents.subtitle", locale)}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base text-[#686b82] leading-relaxed">{t("agents.subtitle", locale)}</p>
+        <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 grid-cols-1 md:grid-cols-3">
           {AGENTS.map((a) => (
-            <div key={a.key} className="rounded-xl border border-[#dedee5] bg-[#fafafa] p-5">
+            <div key={a.key} className="rounded-xl border border-[#dedee5] bg-[#fafafa] p-4 sm:p-5">
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-[#149e61]" />
-                <h3 className="font-semibold text-[#101114]">{t(a.nameKey, locale)}</h3>
+                <h3 className="font-semibold text-sm sm:text-base text-[#101114]">{t(a.nameKey, locale)}</h3>
               </div>
               <p className="mt-3 text-sm text-[#686b82] leading-relaxed">{t(a.descKey, locale)}</p>
             </div>
