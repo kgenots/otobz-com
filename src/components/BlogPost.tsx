@@ -1,4 +1,4 @@
-import { Post } from "@/data/blog-posts";
+import { posts, type Post } from "@/data/blog-posts";
 import { t, type Locale } from "@/lib/i18n";
 
 function formatDate(dateStr: string, locale: Locale) {
@@ -6,9 +6,21 @@ function formatDate(dateStr: string, locale: Locale) {
   return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
+function getRelatedPosts(post: Post, count: number = 3): Post[] {
+  const postTags = new Set(post.tags || []);
+  const scored = posts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => {
+      const match = (p.tags || []).filter((t) => postTags.has(t)).length;
+      return { post: p, score: match };
+    })
+    .sort((a, b) => b.score - a.score || new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, count);
+  return scored.map((s) => s.post);
+}
+
 export default function BlogPost({ post, locale }: { post: Post; locale: Locale }) {
-  const related = ([...Array(3)].map(() => post)
-    .filter((_, i) => i < 2));
+  const related = getRelatedPosts(post);
 
   return (
     <article className="py-20 px-6 pt-32">
@@ -95,25 +107,23 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
           <h3 className="text-xl font-bold text-[#101114] mb-6">{t("blog.related", locale)}</h3>
           <div className="grid gap-4 sm:grid-cols-2">
             {related.map((r, i) => (
-              r.slug !== post.slug && (
-                <a
-                  key={r.slug}
-                  href={`/${locale}/blog/${r.slug}`}
-                  className="group rounded-xl border border-[#dedee5] p-5 hover:border-[#7132f5]/30 transition-colors"
-                >
-                  <div className="flex items-center gap-2 text-xs text-[#9497a9]">
-                    <time>{formatDate(r.date, locale)}</time>
-                    {r.tags?.slice(0, 1).map((tag) => (
-                      <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2 py-0.5 text-[#7132f5]">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h4 className="mt-2 font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
-                    {t(r.titleKey, locale)}
-                  </h4>
-                </a>
-              )
+              <a
+                key={r.slug}
+                href={`/${locale}/blog/${r.slug}`}
+                className="group rounded-xl border border-[#dedee5] p-5 hover:border-[#7132f5]/30 transition-colors"
+              >
+                <div className="flex items-center gap-2 text-xs text-[#9497a9]">
+                  <time>{formatDate(r.date, locale)}</time>
+                  {r.tags?.slice(0, 1).map((tag) => (
+                    <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2 py-0.5 text-[#7132f5]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h4 className="mt-2 font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
+                  {t(r.titleKey, locale)}
+                </h4>
+              </a>
             ))}
           </div>
         </div>
