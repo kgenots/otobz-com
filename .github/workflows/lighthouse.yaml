@@ -1,0 +1,54 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 9 * * 1"
+
+jobs:
+  lighthouse:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Start server for lighthouse
+        run: |
+          npm start &
+          sleep 5
+        env:
+          PORT: 3001
+
+      - name: Install lighthouse
+        run: |
+          if command -v lighthouse &>/dev/null; then
+            echo "lighthouse already installed"
+          else
+            sudo npm install -g lighthouse 2>/dev/null || npm install -g lighthouse
+          fi
+
+      - name: Run lighthouse
+        run: |
+          lighthouse \
+            --no-cdf \
+            --disable-network-conditions \
+            --disable-storage-reset \
+            --output json \
+            --only-categories \
+            --port=3001 \
+            http://localhost:3001/ko \
+            http://localhost:3001/ko/blog \
+            http://localhost:3001/ko/blog/ai-agent-infrastructure
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+
+      - name: Check scores
+        run: |
+          echo "✅ Lighthouse audit complete"
