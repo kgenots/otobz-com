@@ -19,7 +19,16 @@ export default function BlogList({ locale }: { locale: Locale }) {
               href={`/${locale}/blog/${post.slug}`}
               className="block group rounded-xl border border-[#dedee5] p-8 hover:border-[#7132f5]/30 hover:shadow-sm transition-all"
             >
-              <div className="flex items-center gap-3 text-xs text-[#9497a9]">
+              {post.image && (
+                <div className="overflow-hidden rounded-lg">
+                  <img
+                    src={post.image}
+                    alt=""
+                    className="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div className="flex items-center gap-3 text-xs text-[#9497a9] mt-4">
                 {formatDate(post.date, locale)}
                 {post.tags?.map((tag) => (
                   <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium">

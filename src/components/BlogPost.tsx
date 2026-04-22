@@ -9,10 +9,17 @@ function formatDate(dateStr: string, locale: Locale) {
 export default function BlogPost({ post, locale }: { post: Post; locale: Locale }) {
   return (
     <article className="py-20 px-6 pt-32">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <a href={`/${locale}/blog`} className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
           {t("blog.back", locale)}
         </a>
+        {post.image && (
+          <img
+            src={post.image}
+            alt=""
+            className="mt-6 w-full h-64 sm:h-80 rounded-xl object-cover"
+          />
+        )}
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-[#9497a9]">
           <time>{formatDate(post.date, locale)}</time>
           {post.tags?.map((tag) => (
@@ -38,7 +45,7 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
                   const isTable = firstLine.startsWith("|") && lines.length > 1;
 
                   if (isTable) {
-                    const rows = lines.filter(l => l.includes("|"));
+                    const rows = lines.filter(l => l.includes("|") && !/^[\s|\-:]+$/.test(l));
                     const headerCells = rows[0].split("|").filter(c => c.trim()).map(c => c.trim());
                     const dataRows = rows.slice(1).map(r => r.split("|").filter(c => c.trim()).map(c => c.trim()));
                     return (
