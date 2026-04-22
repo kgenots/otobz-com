@@ -1,0 +1,45 @@
+import { posts } from "@/data/blog-posts";
+
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
+}
+
+export default function BlogList() {
+  return (
+    <section className="py-20 px-6">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold tracking-tight text-[#101114]">Blog</h1>
+        <p className="mt-4 text-lg text-[#686b82] max-w-xl">
+          OTOBZ가 배우고 구축하는 과정들을 기록합니다.
+        </p>
+        <div className="mt-12 grid gap-8">
+          {posts.map((post) => (
+            <a
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="block group rounded-xl border border-[#dedee5] p-8 hover:border-[#7132f5]/30 hover:shadow-sm transition-all"
+            >
+              <div className="flex items-center gap-3 text-xs text-[#9497a9]">
+                {formatDate(post.date)}
+                {post.tags?.map((tag) => (
+                  <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h2 className="mt-3 text-2xl font-bold text-[#101114] group-hover:text-[#7132f5] transition-colors">
+                {post.title}
+              </h2>
+              <p className="mt-3 text-[#686b82] leading-relaxed">{post.excerpt}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#7132f5] group-hover:text-[#5741d8] transition-colors">
+                읽기
+                <span aria-hidden="true">→</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

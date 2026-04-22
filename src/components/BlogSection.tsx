@@ -1,0 +1,37 @@
+import { posts } from "@/data/blog-posts";
+
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "long" });
+}
+
+export default function BlogSection() {
+  const latest = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
+  return (
+    <section className="py-20 px-6 border-t border-[#dedee5]">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-[#101114]">Blog</h2>
+          <a href="/blog" className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
+            전체보기 →
+          </a>
+        </div>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {latest.map((post) => (
+            <a
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group rounded-xl border border-[#dedee5] p-6 hover:border-[#7132f5]/30 transition-all"
+            >
+              <div className="text-xs text-[#9497a9]">{formatDate(post.date)}</div>
+              <h3 className="mt-2 text-lg font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
+                {post.title}
+              </h3>
+              <p className="mt-2 text-sm text-[#686b82] leading-relaxed">{post.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
