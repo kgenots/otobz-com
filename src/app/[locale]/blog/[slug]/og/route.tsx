@@ -1,20 +1,20 @@
 import { ImageResponse } from "next/og";
 import { posts } from "@/data/blog-posts";
-import { isLocale, DEFAULT_LOCALE } from "@/lib/i18n";
+import { t, type Locale } from "@/lib/i18n";
 
 export const runtime = "edge";
 export const dynamic = "force-static";
 
 export async function GET(
   _request: Request,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ locale: string; slug: string }> }
 ) {
-  const { slug } = await params;
+  const { locale: raw, slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return new Response("Not found", { status: 404 });
 
-  const title = post.titleKey.replace(/blog\.post\.[^.]+\./, "");
-  const displayTitle = decodeURIComponent(title.replace(/-/g, " "));
+  const locale = raw === "ko" ? "ko" : (["en","ja","es","de","it","fr"].includes(raw) ? raw : "en");
+  const displayTitle = t(post.titleKey, locale as Locale);
 
   return new ImageResponse(
     (
