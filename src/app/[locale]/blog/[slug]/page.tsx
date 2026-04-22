@@ -35,6 +35,9 @@ export async function generateMetadata({ params }: Props) {
           alt: t(post.titleKey, locale),
         },
       ],
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      tags: post.tags || [],
     },
     twitter: {
       card: "summary_large_image",
@@ -67,6 +70,37 @@ export default async function BlogPostPage({ params }: Props) {
   }
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: t(post.titleKey, locale),
+            description: t(post.excerptKey, locale),
+            image: `${BASE}/${locale}/blog/${post.slug}/og`,
+            datePublished: post.date,
+            dateModified: post.date,
+            author: {
+              "@type": "Organization",
+              name: "OTOBZ",
+              url: BASE,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "OTOBZ",
+              logo: {
+                "@type": "ImageObject",
+                url: `${BASE}/favicon.ico`,
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${BASE}/${locale}/blog/${post.slug}`,
+            },
+          }),
+        }}
+      />
       <Header locale={locale} />
       <BlogPost post={post} locale={locale} />
       <Footer locale={locale} />
