@@ -1,17 +1,16 @@
 import { Post } from "@/data/blog-posts";
-import { getLocale, t } from "@/lib/i18n";
+import { t, type Locale } from "@/lib/i18n";
 
-function formatDate(dateStr: string, locale: string) {
+function formatDate(dateStr: string, locale: Locale) {
   const d = new Date(dateStr);
   return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
-export default function BlogPost({ post }: { post: Post }) {
-  const locale = getLocale();
+export default function BlogPost({ post, locale }: { post: Post; locale: Locale }) {
   return (
-    <article className="py-20 px-6">
+    <article className="py-20 px-6 pt-32">
       <div className="max-w-3xl mx-auto">
-        <a href="/blog" className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
+        <a href={`/${locale}/blog`} className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
           {t("blog.back", locale)}
         </a>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-[#9497a9]">

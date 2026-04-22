@@ -1,20 +1,19 @@
 import { posts } from "@/data/blog-posts";
-import { getLocale, t } from "@/lib/i18n";
+import { t, type Locale } from "@/lib/i18n";
 
-function formatDate(dateStr: string, locale: string) {
+function formatDate(dateStr: string, locale: Locale) {
   const d = new Date(dateStr);
   return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long" });
 }
 
-export default function BlogSection() {
-  const locale = getLocale();
+export default function BlogSection({ locale }: { locale: Locale }) {
   const latest = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
   return (
     <section className="py-20 px-6 border-t border-[#dedee5]">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-baseline justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-[#101114]">{t("blog.title", locale)}</h2>
-          <a href="/blog" className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
+          <a href={`/${locale}/blog`} className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
             {t("blog.readMore", locale)}
           </a>
         </div>
@@ -22,7 +21,7 @@ export default function BlogSection() {
           {latest.map((post) => (
             <a
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/${locale}/blog/${post.slug}`}
               className="group rounded-xl border border-[#dedee5] p-6 hover:border-[#7132f5]/30 transition-all"
             >
               <div className="text-xs text-[#9497a9]">{formatDate(post.date, locale)}</div>

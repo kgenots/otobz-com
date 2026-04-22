@@ -1,25 +1,22 @@
 import { posts } from "@/data/blog-posts";
-import { getLocale, t } from "@/lib/i18n";
+import { t, type Locale } from "@/lib/i18n";
 
-function formatDate(dateStr: string, locale: string) {
+function formatDate(dateStr: string, locale: Locale) {
   const d = new Date(dateStr);
   return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
-export default function BlogList() {
-  const locale = getLocale();
+export default function BlogList({ locale }: { locale: Locale }) {
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 pt-32">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-[#101114]">{t("blog.title", locale)}</h1>
-        <p className="mt-4 text-lg text-[#686b82] max-w-xl">
-          {t("blog.description", locale)}
-        </p>
+        <p className="mt-4 text-lg text-[#686b82] max-w-xl">{t("blog.description", locale)}</p>
         <div className="mt-12 grid gap-8">
           {posts.map((post) => (
             <a
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/${locale}/blog/${post.slug}`}
               className="block group rounded-xl border border-[#dedee5] p-8 hover:border-[#7132f5]/30 hover:shadow-sm transition-all"
             >
               <div className="flex items-center gap-3 text-xs text-[#9497a9]">
