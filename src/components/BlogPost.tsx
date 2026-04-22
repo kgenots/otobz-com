@@ -85,6 +85,17 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
               </div>
             </div>
           ))}
+          <div className="rounded-2xl bg-[#7132f5]/5 border border-[#7132f5]/10 p-8 text-center">
+            <p className="text-lg font-semibold text-[#101114]">{t("blog.cta.text", locale)}</p>
+            <a
+              href="https://trip.otobz.com"
+              target="_blank"
+              className="mt-3 inline-flex items-center gap-2 rounded-lg bg-[#7132f5] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5741d8] transition-colors"
+            >
+              {t("blog.cta.button", locale)}
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </article>
