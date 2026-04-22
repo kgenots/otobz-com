@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import BlogPost from "@/components/BlogPost";
 import { DEFAULT_LOCALE, isLocale, t, type Locale } from "@/lib/i18n";
 
+const BASE = "https://otobz.com";
+
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
@@ -13,12 +15,33 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const { slug } = await params;
+  const { locale: raw, slug } = await params;
+  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Not Found — OTOBZ" };
   return {
-    title: `${t(post.titleKey, DEFAULT_LOCALE)} — OTOBZ`,
-    description: t(post.excerptKey, DEFAULT_LOCALE),
+    title: `${t(post.titleKey, locale)} — OTOBZ`,
+    description: t(post.excerptKey, locale),
+    openGraph: {
+      type: "article",
+      title: t(post.titleKey, locale),
+      description: t(post.excerptKey, locale),
+      url: `${BASE}/${locale}/blog/${post.slug}`,
+      images: [
+        {
+          url: `${BASE}/${locale}/blog/${post.slug}/og`,
+          width: 1200,
+          height: 630,
+          alt: t(post.titleKey, locale),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t(post.titleKey, locale),
+      description: t(post.excerptKey, locale),
+      images: [`${BASE}/${locale}/blog/${post.slug}/og`],
+    },
   };
 }
 

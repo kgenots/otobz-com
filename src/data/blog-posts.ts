@@ -20,6 +20,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.ai-agent-infrastructure.title",
     excerptKey: "blog.post.ai-agent-infrastructure.excerpt",
     date: "2026-03-15",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
     tags: ["AI Agent", "Infrastructure"],
     sections: [
       {
@@ -58,6 +59,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.local-ai-vs-cloud-apis.title",
     excerptKey: "blog.post.local-ai-vs-cloud-apis.excerpt",
     date: "2026-03-10",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80",
     tags: ["AI", "Cost Optimization"],
     sections: [
       {
@@ -89,6 +91,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.fine-tuning-vast-ai.title",
     excerptKey: "blog.post.fine-tuning-vast-ai.excerpt",
     date: "2026-03-05",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
     tags: ["Fine-tuning", "Vast.ai"],
     sections: [
       {
@@ -127,6 +130,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.ai-meeting-summarizer.title",
     excerptKey: "blog.post.ai-meeting-summarizer.excerpt",
     date: "2026-02-28",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
     tags: ["AI Agent", "Automation"],
     sections: [
       {
