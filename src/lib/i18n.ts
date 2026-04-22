@@ -124,6 +124,10 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   "nav.services": { ko: "서비스", en: "Services", ja: "サービス", es: "Servicios", de: "Services", it: "Servizi", fr: "Services" },
   "nav.blog": { ko: "블로그", en: "Blog", ja: "ブログ", es: "Blog", de: "Blog", it: "Blog", fr: "Blog" },
   "footer.copyright": { ko: "OTOBZ · AI-First Company", en: "OTOBZ · AI-First Company", ja: "OTOBZ · AI-First Company", es: "OTOBZ · AI-First Company", de: "OTOBZ · AI-First Company", it: "OTOBZ · AI-First Company", fr: "OTOBZ · AI-First Company" },
+  "newsletter.title": { ko: "AI 인사이트를 받아보세요", en: "Get AI Insights", ja: "AIインサイトを受け取る", es: "Recibe insights de IA", de: "Erhalte KI-Insights", it: "Ricevi insights AI", fr: "Recevez des insights IA" },
+  "newsletter.description": { ko: "AI 인프라, 에이전트 운영, 비용 최적화에 대한 최신 정보를 매주 보내드립니다.", en: "Weekly insights on AI infrastructure, agent operations, and cost optimization.", ja: "AIインフラ、エージェント運用、コスト最適化に関する最新情報を毎週お届けします。", es: "Insights semanales sobre infraestructura de IA, operaciones de agentes y optimización de costos.", de: "Wöchentliche Insights zu KI-Infrastruktur, Agentenoperationen und Kostenoptimierung.", it: "Insights settimanali su infrastruttura AI, operazioni di agenti e ottimizzazione dei costi.", fr: "Des insights hebdomadaires sur l'infrastructure IA, les opérations d'agents et l'optimisation des coûts." },
+  "newsletter.placeholder": { ko: "your@email.com", en: "your@email.com", ja: "your@email.com", es: "your@email.com", de: "your@email.com", it: "your@email.com", fr: "your@email.com" },
+  "newsletter.submit": { ko: "구독하기", en: "Subscribe", ja: "購読", es: "Suscribirse", de: "Abonnieren", it: "Iscriviti", fr: "S'abonner" },
 
   // Blog post translations
   "blog.post.ai-agent-infrastructure.title": { ko: "AI 에이전트 인프라 구축하기", en: "Building AI Agent Infrastructure", ja: "AIエージェントインフラの構築", es: "Construir Infraestructura de Agentes de IA", de: "KI-Agent-Infrastruktur aufbauen", it: "Costruire l'Infrastruttura di Agenti AI", fr: "Construire l'Infrastructure d'Agents IA" },
