@@ -13,7 +13,7 @@ export default function BlogList({ locale }: { locale: Locale }) {
         <h1 className="text-4xl font-bold tracking-tight text-[#101114]">{t("blog.title", locale)}</h1>
         <p className="mt-4 text-lg text-[#686b82] max-w-xl">{t("blog.description", locale)}</p>
         <div className="mt-12 grid gap-8">
-          {posts.map((post) => (
+          {[...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
             <a
               key={post.slug}
               href={`/${locale}/blog/${post.slug}`}
