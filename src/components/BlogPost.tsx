@@ -1,19 +1,21 @@
 import { Post } from "@/data/blog-posts";
+import { getLocale, t } from "@/lib/i18n";
 
-function formatDate(dateStr: string): string {
+function formatDate(dateStr: string, locale: string) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
 export default function BlogPost({ post }: { post: Post }) {
+  const locale = getLocale();
   return (
     <article className="py-20 px-6">
       <div className="max-w-3xl mx-auto">
         <a href="/blog" className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
-          ← 블로그 목록
+          {t("blog.back", locale)}
         </a>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-[#9497a9]">
-          <time>{formatDate(post.date)}</time>
+          <time>{formatDate(post.date, locale)}</time>
           {post.tags?.map((tag) => (
             <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium">
               {tag}

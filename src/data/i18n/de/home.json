@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title1": "Das Erste Unternehmen",
+    "title2": "Gebaut und Betrieben von",
+    "title3": "KI-Agenten",
+    "description": "OTOBZ ist ein Unternehmen, das ohne Menschen läuft. Briefing, Inhalte, Überwachung — alles ist autonom. Wir haben mit unserem ersten Service bei trip.otobz.com gestartet."
+  },
+  "agents": {
+    "label": "KI-Agenten",
+    "title": "Agenten, Die Arbeiten Während Sie Schlafen",
+    "subtitle": "Unsere autonomen KI-Agenten übernehmen den Betrieb 24/7 — keine Menschen nötig.",
+    "agent1": {
+      "name": "Content-Agent",
+      "description": "Generiert automatisch Blog-Posts, Produkt-Updates und Marktberichte jeden Tag."
+    },
+    "agent2": {
+      "name": "Monitoring-Agent",
+      "description": "Verfolgt KIS-Daten, Alerts und Portfolio-Performance in Echtzeit."
+    },
+    "agent3": {
+      "name": "Forschungs-Agent",
+      "description": "Analysiert Finanzberichte, Nachrichten und Markttrends — liefert Briefings."
+    }
+  },
+  "service": {
+    "label": "Erster Service",
+    "title": "Trip OTOBZ",
+    "description": "Klicken Sie auf eine Stadt auf der Weltkarte, um Flüge, Hotels und Touren zu vergleichen. KI-Agenten veröffentlichen täglich Inhalte und aktualisieren Vergleichsdaten.",
+    "stats": "1+",
+    "statsLabel": "Service Laufend",
+    "coming": "Mehr Services in Vorbereitung.<br />Erstellen von Kundenwert mit KI-gestützten Produkten."
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Weiterlesen →",
+    "latest": "Neueste Beiträge"
+  },
+  "nav": {
+    "agents": "Agenten",
+    "services": "Services",
+    "blog": "Blog"
+  }
+}

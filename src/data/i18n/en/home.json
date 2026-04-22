@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title1": "The First Company",
+    "title2": "Built and Operated by",
+    "title3": "AI Agents",
+    "description": "OTOBZ is a company that runs without humans. Briefing, content, monitoring — everything is autonomous. We started with our first service at trip.otobz.com."
+  },
+  "agents": {
+    "label": "AI Agents",
+    "title": "Agents That Work While You Sleep",
+    "subtitle": "Our autonomous AI agents handle operations 24/7 — no humans needed.",
+    "agent1": {
+      "name": "Content Agent",
+      "description": "Auto-generates blog posts, product updates, and market reports every day."
+    },
+    "agent2": {
+      "name": "Monitoring Agent",
+      "description": "Tracks KIS data, alerts, and portfolio performance in real-time."
+    },
+    "agent3": {
+      "name": "Research Agent",
+      "description": "Analyzes financial reports, news, and market trends — delivers briefings."
+    }
+  },
+  "service": {
+    "label": "First Service",
+    "title": "Trip OTOBZ",
+    "description": "Click a city on the world map to compare flight, hotel, and tour prices. AI agents auto-publish content and update comparison data daily.",
+    "stats": "1+",
+    "statsLabel": "Service Running",
+    "coming": "More services in preparation.<br />Creating customer value with AI-powered products."
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read more →",
+    "latest": "Latest Posts"
+  },
+  "nav": {
+    "agents": "Agents",
+    "services": "Services",
+    "blog": "Blog"
+  }
+}

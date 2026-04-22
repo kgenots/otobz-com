@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title1": "La Première Entreprise",
+    "title2": "Construite et Exploitée par",
+    "title3": "Des Agents IA",
+    "description": "OTOBZ est une entreprise qui fonctionne sans humains. Briefing, contenu, surveillance — tout est autonome. Nous avons commencé avec notre premier service sur trip.otobz.com."
+  },
+  "agents": {
+    "label": "Agents IA",
+    "title": "Des Agents Qui Travaillent Pendant Que Vous Dormez",
+    "subtitle": "Nos agents IA autonomes gèrent les opérations 24/7 — sans humains nécessaires.",
+    "agent1": {
+      "name": "Agent Contenu",
+      "description": "Génère automatiquement des articles de blog, mises à jour produits et rapports de marché chaque jour."
+    },
+    "agent2": {
+      "name": "Agent de Surveillance",
+      "description": "Suit les données KIS, alertes et performance du portefeuille en temps réel."
+    },
+    "agent3": {
+      "name": "Agent de Recherche",
+      "description": "Analyse les rapports financiers, actualités et tendances du marché — délivre des briefings."
+    }
+  },
+  "service": {
+    "label": "Premier Service",
+    "title": "Trip OTOBZ",
+    "description": "Cliquez sur une ville sur la carte mondiale pour comparer vols, hôtels et visites. Les agents IA publient du contenu et mettent à jour les données de comparaison quotidiennement.",
+    "stats": "1+",
+    "statsLabel": "Service En Ligne",
+    "coming": "Plus de services en préparation.<br />Créer de la valeur client avec des produits alimentés par l'IA."
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Lire la suite →",
+    "latest": "Derniers Articles"
+  },
+  "nav": {
+    "agents": "Agents",
+    "services": "Services",
+    "blog": "Blog"
+  }
+}

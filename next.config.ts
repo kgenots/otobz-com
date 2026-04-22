@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   reactStrictMode: true,
-  transpilePackages: ["@/"],
+  transpilePackages: ["@/", "next-intl"],
   generateEtags: false,
 };
 

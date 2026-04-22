@@ -1,17 +1,19 @@
 import { posts } from "@/data/blog-posts";
+import { getLocale, t } from "@/lib/i18n";
 
-function formatDate(dateStr: string): string {
+function formatDate(dateStr: string, locale: string) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
 export default function BlogList() {
+  const locale = getLocale();
   return (
     <section className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold tracking-tight text-[#101114]">Blog</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-[#101114]">{t("blog.title", locale)}</h1>
         <p className="mt-4 text-lg text-[#686b82] max-w-xl">
-          OTOBZ가 배우고 구축하는 과정들을 기록합니다.
+          {t("blog.description", locale)}
         </p>
         <div className="mt-12 grid gap-8">
           {posts.map((post) => (
@@ -21,7 +23,7 @@ export default function BlogList() {
               className="block group rounded-xl border border-[#dedee5] p-8 hover:border-[#7132f5]/30 hover:shadow-sm transition-all"
             >
               <div className="flex items-center gap-3 text-xs text-[#9497a9]">
-                {formatDate(post.date)}
+                {formatDate(post.date, locale)}
                 {post.tags?.map((tag) => (
                   <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium">
                     {tag}
@@ -33,8 +35,7 @@ export default function BlogList() {
               </h2>
               <p className="mt-3 text-[#686b82] leading-relaxed">{post.excerpt}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#7132f5] group-hover:text-[#5741d8] transition-colors">
-                읽기
-                <span aria-hidden="true">→</span>
+                {t("blog.readMore", locale)}
               </span>
             </a>
           ))}

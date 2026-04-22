@@ -1,19 +1,21 @@
 import { posts } from "@/data/blog-posts";
+import { getLocale, t } from "@/lib/i18n";
 
-function formatDate(dateStr: string): string {
+function formatDate(dateStr: string, locale: string) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "long" });
+  return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long" });
 }
 
 export default function BlogSection() {
+  const locale = getLocale();
   const latest = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
   return (
     <section className="py-20 px-6 border-t border-[#dedee5]">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-[#101114]">Blog</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-[#101114]">{t("blog.title", locale)}</h2>
           <a href="/blog" className="text-sm text-[#7132f5] hover:text-[#5741d8] transition-colors">
-            전체보기 →
+            {t("blog.readMore", locale)}
           </a>
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -23,7 +25,7 @@ export default function BlogSection() {
               href={`/blog/${post.slug}`}
               className="group rounded-xl border border-[#dedee5] p-6 hover:border-[#7132f5]/30 transition-all"
             >
-              <div className="text-xs text-[#9497a9]">{formatDate(post.date)}</div>
+              <div className="text-xs text-[#9497a9]">{formatDate(post.date, locale)}</div>
               <h3 className="mt-2 text-lg font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
                 {post.title}
               </h3>
