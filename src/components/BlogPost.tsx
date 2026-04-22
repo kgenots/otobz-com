@@ -31,11 +31,50 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
                 {t(section.headingKey, locale)}
               </h2>
               <div className="space-y-6">
-                {section.paragraphKeys.map((key, i) => (
-                  <p key={i} className="text-[#101114] leading-relaxed">
-                    {t(key, locale)}
-                  </p>
-                ))}
+                {section.paragraphKeys.map((key, i) => {
+                  const text = t(key, locale);
+                  const lines = text.split("\n");
+                  const firstLine = lines[0];
+                  const isTable = firstLine.startsWith("|") && lines.length > 1;
+
+                  if (isTable) {
+                    const rows = lines.filter(l => l.includes("|"));
+                    const headerCells = rows[0].split("|").filter(c => c.trim()).map(c => c.trim());
+                    const dataRows = rows.slice(1).map(r => r.split("|").filter(c => c.trim()).map(c => c.trim()));
+                    return (
+                      <div key={i} className="overflow-x-auto">
+                        <table className="min-w-full border border-[#dedee5] rounded-lg text-sm">
+                          <thead>
+                            <tr className="bg-[#fafafa]">
+                              {headerCells.map((h, j) => (
+                                <th key={j} className="px-4 py-2 border border-[#dedee5] text-left font-semibold text-[#101114]">
+                                  {h}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {dataRows.map((row, ri) => (
+                              <tr key={ri}>
+                                {row.map((cell, ci) => (
+                                  <td key={ci} className="px-4 py-2 border border-[#dedee5] text-[#101114]">
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <p key={i} className="text-[#101114] leading-relaxed">
+                      {text}
+                    </p>
+                  );
+                })}
               </div>
             </div>
           ))}

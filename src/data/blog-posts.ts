@@ -10,6 +10,7 @@ export type Post = {
   titleKey: string;
   excerptKey: string;
   date: string;
+  image?: string;
   tags?: string[];
   sections: PostSection[];
 };
