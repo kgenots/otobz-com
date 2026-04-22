@@ -127,6 +127,7 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   },
   "blog.readMore": { ko: "읽기 →", en: "Read more →", ja: "続きを読む →", es: "Leer más →", de: "Weiterlesen →", it: "Leggi di più →", fr: "Lire la suite →" },
   "blog.back": { ko: "← 블로그", en: "← Blog", ja: "← ブログ", es: "← Blog", de: "← Blog", it: "← Blog", fr: "← Blog" },
+  "blog.related": { ko: "관련 글", en: "Related Posts", ja: "関連記事", es: "Artículos Relacionados", de: "Ähnliche Beiträge", it: "Articoli Correlati", fr: "Articles Similaires" },
   "blog.notFound": { ko: "포스트를 찾을 수 없습니다", en: "Post not found", ja: "ページが見つかりません", es: "Publicación no encontrada", de: "Beitrag nicht gefunden", it: "Post non trovato", fr: "Article introuvable" },
   "nav.agents": { ko: "에이전트", en: "Agents", ja: "エージェント", es: "Agentes", de: "Agenten", it: "Agenti", fr: "Agents" },
   "nav.services": { ko: "서비스", en: "Services", ja: "サービス", es: "Servicios", de: "Services", it: "Servizi", fr: "Services" },

@@ -7,6 +7,9 @@ function formatDate(dateStr: string, locale: Locale) {
 }
 
 export default function BlogPost({ post, locale }: { post: Post; locale: Locale }) {
+  const related = ([...Array(3)].map(() => post)
+    .filter((_, i) => i < 2));
+
   return (
     <article className="py-20 px-6 pt-32">
       <div className="max-w-5xl mx-auto">
@@ -85,17 +88,59 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
               </div>
             </div>
           ))}
-          <div className="rounded-2xl bg-[#7132f5]/5 border border-[#7132f5]/10 p-8 text-center">
-            <p className="text-lg font-semibold text-[#101114]">{t("blog.cta.text", locale)}</p>
-            <a
-              href="https://trip.otobz.com"
-              target="_blank"
-              className="mt-3 inline-flex items-center gap-2 rounded-lg bg-[#7132f5] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5741d8] transition-colors"
-            >
-              {t("blog.cta.button", locale)}
-              <span aria-hidden="true">→</span>
-            </a>
+        </div>
+
+        {/* Related posts */}
+        <div className="mt-16">
+          <h3 className="text-xl font-bold text-[#101114] mb-6">{t("blog.related", locale)}</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {related.map((r, i) => (
+              r.slug !== post.slug && (
+                <a
+                  key={r.slug}
+                  href={`/${locale}/blog/${r.slug}`}
+                  className="group rounded-xl border border-[#dedee5] p-5 hover:border-[#7132f5]/30 transition-colors"
+                >
+                  <div className="flex items-center gap-2 text-xs text-[#9497a9]">
+                    <time>{formatDate(r.date, locale)}</time>
+                    {r.tags?.slice(0, 1).map((tag) => (
+                      <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2 py-0.5 text-[#7132f5]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h4 className="mt-2 font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
+                    {t(r.titleKey, locale)}
+                  </h4>
+                </a>
+              )
+            ))}
           </div>
+        </div>
+
+        {/* Newsletter CTA */}
+        <div className="mt-12 rounded-2xl bg-[#7132f5]/5 border border-[#7132f5]/10 p-8 text-center">
+          <h3 className="text-lg font-bold text-[#101114]">{t("newsletter.title", locale)}</h3>
+          <p className="mt-2 text-sm text-[#686b82]">{t("newsletter.description", locale)}</p>
+          <a
+            href={`/${locale}/contact`}
+            className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[#7132f5] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#5741d8] transition-colors"
+          >
+            {t("newsletter.submit", locale)}
+          </a>
+        </div>
+
+        {/* Trip CTA */}
+        <div className="mt-6 rounded-2xl bg-[#7132f5]/5 border border-[#7132f5]/10 p-8 text-center">
+          <p className="text-lg font-semibold text-[#101114]">{t("blog.cta.text", locale)}</p>
+          <a
+            href="https://trip.otobz.com"
+            target="_blank"
+            className="mt-3 inline-flex items-center gap-2 rounded-lg bg-[#7132f5] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5741d8] transition-colors"
+          >
+            {t("blog.cta.button", locale)}
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </article>
