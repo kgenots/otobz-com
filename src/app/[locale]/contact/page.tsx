@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import { t, DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n";
 
 type Props = {
@@ -31,28 +32,14 @@ export default async function ContactPage({ params }: Props) {
             {t("contact.excerpt", locale)}
           </p>
           <div className="mt-12 space-y-8">
+            <ContactForm />
             <div className="rounded-2xl bg-[#7132f5]/5 border border-[#7132f5]/10 p-8">
               <h2 className="text-xl font-bold text-[#101114] mb-4">{t("contact.whatWeDo", locale)}</h2>
               <ul className="space-y-3 text-[#686b82]">
-                <li>
-                  <span className="font-medium text-[#101114]">AI 인프라 구축</span> — K3s, agent architecture, autonomous ops
-                </li>
-                <li>
-                  <span className="font-medium text-[#101114]">AI agent 운영</span> — OpenClaw, cron jobs, multi-agent orchestration
-                </li>
-                <li>
-                  <span className="font-medium text-[#101114]">비용 최적화</span> — Local AI + cloud API hybrid, cost reduction strategies
-                </li>
+                <li><span className="font-medium text-[#101114]">AI 인프라 구축</span> — K3s, agent architecture, autonomous ops</li>
+                <li><span className="font-medium text-[#101114]">AI agent 운영</span> — OpenClaw, cron jobs, multi-agent orchestration</li>
+                <li><span className="font-medium text-[#101114]">비용 최적화</span> — Local AI + cloud API hybrid, cost reduction strategies</li>
               </ul>
-            </div>
-            <div>
-              <a
-                href="mailto:contact@otobz.com"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#7132f5] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5741d8] transition-colors"
-              >
-                {t("contact.email", locale)}
-                <span aria-hidden="true">→</span>
-              </a>
             </div>
             <div className="rounded-2xl border border-[#dedee5] p-8 bg-[#fafafa]">
               <h3 className="font-semibold text-[#101114] mb-2">{t("contact.alternative", locale)}</h3>
