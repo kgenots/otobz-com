@@ -42,6 +42,7 @@ export default function HeaderNav({ locale }: { locale: Locale }) {
         <a href={`/${locale}#agents`} className="hover:text-[#101114] transition-colors">{t("nav.agents", locale)}</a>
         <a href={`/${locale}#service`} className="hover:text-[#101114] transition-colors">{t("nav.services", locale)}</a>
         <a href={`/${locale}/blog`} className="hover:text-[#101114] transition-colors">{t("nav.blog", locale)}</a>
+        <a href={`/${locale}/contact`} className="hover:text-[#101114] transition-colors">{t("nav.contact", locale)}</a>
         <a href="https://trip.otobz.com" target="_blank" className="text-[#7132f5] hover:text-[#5741d8] transition-colors">
           trip.otobz.com →
         </a>
@@ -99,6 +100,7 @@ export default function HeaderNav({ locale }: { locale: Locale }) {
                 <a href={`/${locale}#agents`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.agents", locale)}</a>
                 <a href={`/${locale}#service`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.services", locale)}</a>
                 <a href={`/${locale}/blog`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.blog", locale)}</a>
+                <a href={`/${locale}/contact`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.contact", locale)}</a>
                 <a href="https://trip.otobz.com" target="_blank" className="px-3 py-2 text-[#7132f5] hover:text-[#5741d8] rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>trip.otobz.com →</a>
                 <div className="mt-1 pt-2 border-t border-[#dedee5]">
                   {LOCALES.map((code) => (
