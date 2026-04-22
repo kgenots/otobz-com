@@ -1,5 +1,31 @@
 import { t, type Locale } from "@/lib/i18n";
 
+function ServiceCard({
+  href,
+  titleKey,
+  descKey,
+  locale,
+}: {
+  href: string;
+  titleKey: string;
+  descKey: string;
+  locale: Locale;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      className="group rounded-xl border border-[#dedee5] p-5 hover:border-[#7132f5]/30 hover:shadow-sm transition-all flex flex-col gap-2"
+    >
+      <div className="text-2xl">🌍</div>
+      <h3 className="font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
+        {t(titleKey, locale)}
+      </h3>
+      <p className="text-sm text-[#686b82] leading-relaxed">{t(descKey, locale)}</p>
+    </a>
+  );
+}
+
 export default function Hero({ locale }: { locale: Locale }) {
   return (
     <section className="pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-28 px-4 sm:px-6 relative overflow-hidden">
@@ -43,6 +69,23 @@ export default function Hero({ locale }: { locale: Locale }) {
             {t("hero.ctaBlog", locale)}
           </a>
         </div>
+
+        {/* Services */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <ServiceCard
+            href="https://trip.otobz.com"
+            titleKey="hero.service.trip.title"
+            descKey="hero.service.trip.desc"
+            locale={locale}
+          />
+          <ServiceCard
+            href={`/${locale}/blog`}
+            titleKey="hero.service.blog.title"
+            descKey="hero.service.blog.desc"
+            locale={locale}
+          />
+        </div>
+
         {/* Footer stats */}
         <div className="mt-12 sm:mt-16 flex flex-wrap gap-8 sm:gap-12">
           <div>

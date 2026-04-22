@@ -14,7 +14,7 @@ function getRelatedPosts(post: Post, count: number = 3): Post[] {
       const match = (p.tags || []).filter((t) => postTags.has(t)).length;
       return { post: p, score: match };
     })
-    .sort((a, b) => b.score - a.score || new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => b.score - a.score || new Date(b.post.date).getTime() - new Date(a.post.date).getTime())
     .slice(0, count);
   return scored.map((s) => s.post);
 }
@@ -38,9 +38,13 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-[#9497a9]">
           <time>{formatDate(post.date, locale)}</time>
           {post.tags?.map((tag) => (
-            <span key={tag} className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium">
+            <a
+              key={tag}
+              href={`/${locale}/blog?tag=${encodeURIComponent(tag)}`}
+              className="rounded-full bg-[#7132f5]/10 px-2.5 py-0.5 text-[#7132f5] font-medium hover:bg-[#7132f5]/20 transition-colors cursor-pointer"
+            >
               {tag}
-            </span>
+            </a>
           ))}
         </div>
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#101114]">

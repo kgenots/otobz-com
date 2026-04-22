@@ -42,6 +42,10 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   "hero.stats.localesLabel": { ko: "Languages", en: "Languages", ja: "言語", es: "Idiomas", de: "Sprachen", it: "Lingue", fr: "Langues" },
   "hero.stats.uptime": { ko: "99.9%", en: "99.9%", ja: "99.9%", es: "99.9%", de: "99.9%", it: "99.9%", fr: "99.9%" },
   "hero.stats.uptimeLabel": { ko: "Uptime", en: "Uptime", ja: "稼働率", es: "Uptime", de: "Betriebszeit", it: "Uptime", fr: "Temps de fonctionnement" },
+  "hero.service.trip.title": { ko: "OTOBZ Trip", en: "OTOBZ Trip", ja: "OTOBZ Trip", es: "OTOBZ Trip", de: "OTOBZ Trip", it: "OTOBZ Trip", fr: "OTOBZ Trip" },
+  "hero.service.trip.desc": { ko: "여행 일정을 AI가 즉시 구성하세요. 현지 가이드, 식당, 액티비티까지.", en: "AI-structured travel itineraries in seconds. Local guides, restaurants, activities.", ja: "旅行予定を数秒でAI構成。現地ガイド、レストラン、アクティビティまで。", es: "Itinerarios de viaje estructurados por AI en segundos. Guías locales, restaurantes, actividades.", de: "Reiserouten per KI in Sekunden. Lokale Guides, Restaurants, Aktivitäten.", it: "Itinerari di viaggio strutturati dall'AI in secondi. Guide locali, ristoranti, attività.", fr: "Itinéraires de voyage structurés par IA en quelques secondes. Guides locaux, restaurants, activités." },
+  "hero.service.blog.title": { ko: "OTOBZ Blog", en: "OTOBZ Blog", ja: "OTOBZ ブログ", es: "Blog OTOBZ", de: "OTOBZ Blog", it: "Blog OTOBZ", fr: "Blog OTOBZ" },
+  "hero.service.blog.desc": { ko: "AI 인프라, 에이전트 운영, 비용 최적화에 대한 깊이 있는 글", en: "Deep dives into AI infrastructure, agent operations, and cost optimization", ja: "AIインフラ、エージェント運用、コスト最適化についての深い洞察", es: "Análisis profundos sobre infraestructura de IA, operaciones de agentes y optimización de costos", de: "Tiefgehende Analysen zu KI-Infrastruktur, Agenten-Betrieb und Kostenoptimierung", it: "Approfondimenti su infrastruttura AI, operazioni di agenti e ottimizzazione dei costi", fr: "Analyses approfondies sur l'infrastructure IA, les opérations d'agents et l'optimisation des coûts" },
   "agents.label": {
     ko: "에이전트", en: "Agents", ja: "エージェント", es: "Agentes",
     de: "Agenten", it: "Agenti", fr: "Agents",

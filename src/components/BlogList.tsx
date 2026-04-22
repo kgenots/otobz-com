@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { posts } from "@/data/blog-posts";
 import { t, type Locale } from "@/lib/i18n";
 
@@ -12,7 +12,10 @@ function formatDate(dateStr: string, locale: Locale) {
 const ALL_TAGS = [...new Set(posts.flatMap((p) => p.tags || []))];
 
 export default function BlogList({ locale }: { locale: Locale }) {
-  const [tag, setTag] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const paramTag = searchParams.get("tag");
+  const tag = paramTag && ALL_TAGS.includes(paramTag) ? paramTag : null;
   const filtered = tag ? posts.filter((p) => p.tags?.includes(tag)) : posts;
 
   return (
@@ -24,7 +27,13 @@ export default function BlogList({ locale }: { locale: Locale }) {
         {/* Tag filters */}
         <div className="mt-8 flex flex-wrap gap-2">
           <button
-            onClick={() => setTag(null)}
+            onClick={() => {
+              if (tag) {
+                const params = new URLSearchParams(searchParams);
+                params.delete("tag");
+                router.replace(`?${params.toString()}`);
+              }
+            }}
             className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
               !tag
                 ? "bg-[#7132f5] text-white"
@@ -36,7 +45,15 @@ export default function BlogList({ locale }: { locale: Locale }) {
           {ALL_TAGS.map((tagLabel) => (
             <button
               key={tagLabel}
-              onClick={() => setTag(tagLabel)}
+              onClick={() => {
+                const params = new URLSearchParams(searchParams);
+                if (tag === tagLabel) {
+                  params.delete("tag");
+                } else {
+                  params.set("tag", tagLabel);
+                }
+                router.replace(`?${params.toString()}`);
+              }}
               className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
                 tag === tagLabel
                   ? "bg-[#7132f5] text-white"
@@ -53,7 +70,7 @@ export default function BlogList({ locale }: { locale: Locale }) {
           {[...filtered].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
             <a
               key={post.slug}
-              href={`/${locale}/blog/${post.slug}`}
+              href={`/${locale}/blog/${post.slug}${tag ? `?tag=${encodeURIComponent(tag)}` : ""}`}
               className="block group rounded-xl border border-[#dedee5] p-8 hover:border-[#7132f5]/30 hover:shadow-sm transition-all"
             >
               {post.image && (
