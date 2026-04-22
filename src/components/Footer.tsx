@@ -1,0 +1,13 @@
+export default function Footer() {
+  return (
+    <footer className="border-t border-white/5 py-8 px-6">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+        <div>OTOBZ · AI-First Company</div>
+        <div className="flex gap-4">
+          <a href="https://trip.otobz.com" className="hover:text-zinc-300 transition-colors">trip</a>
+          <a href="https://blog.otobz.com" className="hover:text-zinc-300 transition-colors">blog</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
