@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props) {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Not Found — OTOBZ" };
   return {
-    title: `${post.title} — OTOBZ`,
-    description: post.excerpt,
+    title: `${t(post.titleKey, DEFAULT_LOCALE)} — OTOBZ`,
+    description: t(post.excerptKey, DEFAULT_LOCALE),
   };
 }
 

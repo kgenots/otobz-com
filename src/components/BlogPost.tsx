@@ -21,17 +21,23 @@ export default function BlogPost({ post, locale }: { post: Post; locale: Locale 
             </span>
           ))}
         </div>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#101114]">{post.title}</h1>
-        <div className="mt-8 space-y-6">
-          {post.paragraphs.map((p, i) => (
-            <p key={i} className="text-[#101114] leading-relaxed">
-              {post.headings && i < post.headings.length && (
-                <span className="block text-2xl font-bold text-[#7132f5] mb-2">
-                  {post.headings[i]}
-                </span>
-              )}
-              {p}
-            </p>
+        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#101114]">
+          {t(post.titleKey, locale)}
+        </h1>
+        <div className="mt-8 space-y-10">
+          {post.sections.map((section, sectionIndex) => (
+            <div key={sectionIndex}>
+              <h2 className="text-2xl font-bold text-[#7132f5] mb-4">
+                {t(section.headingKey, locale)}
+              </h2>
+              <div className="space-y-6">
+                {section.paragraphKeys.map((key, i) => (
+                  <p key={i} className="text-[#101114] leading-relaxed">
+                    {t(key, locale)}
+                  </p>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

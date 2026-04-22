@@ -2,8 +2,16 @@ import { t, type Locale } from "@/lib/i18n";
 
 export default function Hero({ locale }: { locale: Locale }) {
   return (
-    <section className="pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-28 px-4 sm:px-6">
-      <div className="max-w-5xl mx-auto">
+    <section className="pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-28 px-4 sm:px-6 relative overflow-hidden">
+      {/* Subtle dot pattern background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `radial-gradient(circle, #7132f5 1px, transparent 1px)`,
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="max-w-5xl mx-auto relative">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-[#101114] whitespace-pre-line">
           {t("hero.title1", locale)}
         </h1>

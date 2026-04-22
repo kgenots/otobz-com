@@ -28,9 +28,9 @@ export default function BlogList({ locale }: { locale: Locale }) {
                 ))}
               </div>
               <h2 className="mt-3 text-2xl font-bold text-[#101114] group-hover:text-[#7132f5] transition-colors">
-                {post.title}
+                {t(post.titleKey, locale)}
               </h2>
-              <p className="mt-3 text-[#686b82] leading-relaxed">{post.excerpt}</p>
+              <p className="mt-3 text-[#686b82] leading-relaxed">{t(post.excerptKey, locale)}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#7132f5] group-hover:text-[#5741d8] transition-colors">
                 {t("blog.readMore", locale)}
               </span>

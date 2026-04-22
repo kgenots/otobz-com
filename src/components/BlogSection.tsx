@@ -26,9 +26,9 @@ export default function BlogSection({ locale }: { locale: Locale }) {
             >
               <div className="text-xs text-[#9497a9]">{formatDate(post.date, locale)}</div>
               <h3 className="mt-2 text-base sm:text-lg font-semibold text-[#101114] group-hover:text-[#7132f5] transition-colors">
-                {post.title}
+                {t(post.titleKey, locale)}
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-[#686b82] leading-relaxed">{post.excerpt}</p>
+              <p className="mt-2 text-xs sm:text-sm text-[#686b82] leading-relaxed">{t(post.excerptKey, locale)}</p>
             </a>
           ))}
         </div>
