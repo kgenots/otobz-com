@@ -165,4 +165,73 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-openclaw-pairing-works",
+    titleKey: "blog.post.how-openclaw-pairing-works.title",
+    excerptKey: "blog.post.how-openclaw-pairing-works.excerpt",
+    date: "2026-04-20",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    tags: ["OpenClaw", "Device Management"],
+    sections: [
+      {
+        headingKey: "blog.post.how-openclaw-pairing-works.h1",
+        paragraphKeys: [
+          "blog.post.how-openclaw-pairing-works.p1",
+          "blog.post.how-openclaw-pairing-works.p2",
+        ],
+      },
+      {
+        headingKey: "blog.post.how-openclaw-pairing-works.h2",
+        paragraphKeys: [
+          "blog.post.how-openclaw-pairing-works.p3",
+          "blog.post.how-openclaw-pairing-works.p4",
+        ],
+      },
+      {
+        headingKey: "blog.post.how-openclaw-pairing-works.h3",
+        paragraphKeys: [
+          "blog.post.how-openclaw-pairing-works.p5",
+          "blog.post.how-openclaw-pairing-works.p6",
+        ],
+      },
+      {
+        headingKey: "blog.post.how-openclaw-pairing-works.h4",
+        paragraphKeys: [
+          "blog.post.how-openclaw-pairing-works.p7",
+          "blog.post.how-openclaw-pairing-works.p8",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "why-i-use-vast-for-gpu",
+    titleKey: "blog.post.why-i-use-vast-for-gpu.title",
+    excerptKey: "blog.post.why-i-use-gpu.title",
+    date: "2026-04-15",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    tags: ["GPU", "Cost Optimization"],
+    sections: [
+      {
+        headingKey: "blog.post.why-i-use-vast-for-gpu.h1",
+        paragraphKeys: [
+          "blog.post.why-i-use-vast-for-gpu.p1",
+          "blog.post.why-i-use-vast-for-gpu.p2",
+        ],
+      },
+      {
+        headingKey: "blog.post.why-i-use-vast-for-gpu.h2",
+        paragraphKeys: [
+          "blog.post.why-i-use-vast-for-gpu.p3",
+          "blog.post.why-i-use-vast-for-gpu.p4",
+        ],
+      },
+      {
+        headingKey: "blog.post.why-i-use-vast-for-gpu.h3",
+        paragraphKeys: [
+          "blog.post.why-i-use-vast-for-gpu.p5",
+          "blog.post.why-i-use-vast-for-gpu.p6",
+        ],
+      },
+    ],
+  },
 ];
