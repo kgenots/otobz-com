@@ -234,4 +234,97 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "openclaw-state-management",
+    titleKey: "blog.post.openclaw-state-management.title",
+    excerptKey: "blog.post.openclaw-state-management.excerpt",
+    date: "2026-04-22",
+    image: "https://images.unsplash.com/photo-1555949963-ff9ce0406031?w=1200&q=80",
+    tags: ["OpenClaw", "Architecture"],
+    sections: [
+      {
+        headingKey: "blog.post.openclaw-state-management.h1",
+        paragraphKeys: [
+          "blog.post.openclaw-state-management.p1",
+          "blog.post.openclaw-state-management.p2",
+        ],
+      },
+      {
+        headingKey: "blog.post.openclaw-state-management.h2",
+        paragraphKeys: [
+          "blog.post.openclaw-state-management.p3",
+          "blog.post.openclaw-state-management.p4",
+        ],
+      },
+      {
+        headingKey: "blog.post.openclaw-state-management.h3",
+        paragraphKeys: [
+          "blog.post.openclaw-state-management.p5",
+          "blog.post.openclaw-state-management.p6",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "k3s-deploy-pipeline",
+    titleKey: "blog.post.k3s-deploy-pipeline.title",
+    excerptKey: "blog.post.k3s-deploy-pipeline.excerpt",
+    date: "2026-04-18",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    tags: ["Infrastructure", "CI/CD"],
+    sections: [
+      {
+        headingKey: "blog.post.k3s-deploy-pipeline.h1",
+        paragraphKeys: [
+          "blog.post.k3s-deploy-pipeline.p1",
+          "blog.post.k3s-deploy-pipeline.p2",
+        ],
+      },
+      {
+        headingKey: "blog.post.k3s-deploy-pipeline.h2",
+        paragraphKeys: [
+          "blog.post.k3s-deploy-pipeline.p3",
+          "blog.post.k3s-deploy-pipeline.p4",
+        ],
+      },
+      {
+        headingKey: "blog.post.k3s-deploy-pipeline.h3",
+        paragraphKeys: [
+          "blog.post.k3s-deploy-pipeline.p5",
+          "blog.post.k3s-deploy-pipeline.p6",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cloudflared-tunnel-security",
+    titleKey: "blog.post.cloudflared-tunnel-security.title",
+    excerptKey: "blog.post.cloudflared-tunnel-security.excerpt",
+    date: "2026-04-12",
+    image: "https://images.unsplash.com/photo-1563986768609-322da138ed9e?w=1200&q=80",
+    tags: ["Security", "Infrastructure"],
+    sections: [
+      {
+        headingKey: "blog.post.cloudflared-tunnel-security.h1",
+        paragraphKeys: [
+          "blog.post.cloudflared-tunnel-security.p1",
+          "blog.post.cloudflared-tunnel-security.p2",
+        ],
+      },
+      {
+        headingKey: "blog.post.cloudflared-tunnel-security.h2",
+        paragraphKeys: [
+          "blog.post.cloudflared-tunnel-security.p3",
+          "blog.post.cloudflared-tunnel-security.p4",
+        ],
+      },
+      {
+        headingKey: "blog.post.cloudflared-tunnel-security.h3",
+        paragraphKeys: [
+          "blog.post.cloudflared-tunnel-security.p5",
+          "blog.post.cloudflared-tunnel-security.p6",
+        ],
+      },
+    ],
+  },
 ];
