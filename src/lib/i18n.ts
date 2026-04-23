@@ -136,6 +136,7 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   "blog.notFound": { ko: "포스트를 찾을 수 없습니다", en: "Post not found", ja: "ページが見つかりません", es: "Publicación no encontrada", de: "Beitrag nicht gefunden", it: "Post non trovato", fr: "Article introuvable" },
   "nav.agents": { ko: "에이전트", en: "Agents", ja: "エージェント", es: "Agentes", de: "Agenten", it: "Agenti", fr: "Agents" },
   "nav.services": { ko: "서비스", en: "Services", ja: "サービス", es: "Servicios", de: "Services", it: "Servizi", fr: "Services" },
+  "nav.ships": { ko: "쉬핑", en: "Ships", ja: "シッピング", es: "Envíos", de: "Lieferungen", it: "Spedizioni", fr: "Livraisons" },
   "nav.blog": { ko: "블로그", en: "Blog", ja: "ブログ", es: "Blog", de: "Blog", it: "Blog", fr: "Blog" },
   "nav.contact": { ko: "문의", en: "Contact", ja: "お問い合わせ", es: "Contacto", de: "Kontakt", it: "Contatti", fr: "Contact" },
   "contact.title": { ko: "문의하기", en: "Contact", ja: "お問い合わせ", es: "Contacto", de: "Kontakt", it: "Contatti", fr: "Contact" },
@@ -312,6 +313,35 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   "blog.post.cloudflared-tunnel-security.h3": { ko: "실전 교훈", en: "Real-World Lessons", ja: "実戦の教訓", es: "Lecciones del Mundo Real", de: "Praxis-Erfahrungen", it: "Lezioni del Mondo Reale", fr: "Leçons du Monde Réel" },
   "blog.post.cloudflared-tunnel-security.p5": { ko: "한 번 DNS 설정 실수로 tunnel 도메인이 외부 DNS에서 가리키는 경우가 있었습니다. Cloudflare 대시보드에서 즉시 차단하고 DNS를 복구했습니다. tunnel 도메인은 반드시 Cloudflare DNS에서만 관리하세요.", en: "Once we had a DNS config mistake where a tunnel domain was pointed to by an external DNS. We immediately blocked it in the Cloudflare dashboard and restored DNS. Always manage tunnel domains only in Cloudflare DNS.", ja: "DNS設定ミスでtunnelドメインが外部DNSで指されたことがありました。Cloudflareダッシュボードですぐにブロックし、DNSを復旧しました。tunnelドメインは必ずCloudflare DNSでのみ管理してください。", es: "Una vez tuvimos un error de config DNS donde un dominio de tunnel era apuntado por un DNS externo. Lo bloqueamos inmediatamente en Cloudflare dashboard y restauramos DNS. Siempre gestiona dominios de tunnel solo en DNS de Cloudflare.", de: "Einmal hatten wir einen DNS-Config-Fehler, wo eine Tunnel-Domain von einem externen DNS angesprochen wurde. Wir blockierten es sofort im Cloudflare-Dashboard und stellten DNS wieder her. Verwalte Tunnel-Domains immer nur im Cloudflare DNS.", it: "Una volta abbiamo avuto un errore di config DNS dove un dominio tunnel era puntato da un DNS esterno. Lo abbiamo bloccato immediatamente nella dashboard di Cloudflare e ripristinato DNS. Gestisci sempre domini tunnel solo nel DNS di Cloudflare.", fr: "Une fois nous avons eu une erreur de config DNS où un domaine tunnel était pointé par un DNS externe. Nous l'avons bloqué immédiatement dans le tableau de bord Cloudflare et restauré le DNS. Gérez toujours les domaines tunnel uniquement dans le DNS Cloudflare." },
   "blog.post.cloudflared-tunnel-security.p6": { ko: "Cloudflare Tunnel은 방화벽이 필요 없는 훌륭한 해결책이지만, DNS 관리가 생명입니다. tunnel 도메인을 Cloudflare 외부에서 관리하는 순간 보안이 무너집니다.", en: "Cloudflare Tunnel is a great no-firewall solution, but DNS management is critical. The moment you manage tunnel domains outside of Cloudflare, security breaks.", ja: "Cloudflare Tunnelはファイアウォール不要の優れたソリューションですが、DNS管理が生命です。tunnelドメインをCloudflare外部で管理する瞬間、セキュリティが崩壊します。", es: "Cloudflare Tunnel es una gran solución sin firewall, pero la gestión DNS es crítica. En el momento que gestiones dominios de tunnel fuera de Cloudflare, la seguridad se rompe.", de: "Cloudflare Tunnel ist eine großartige Firewall-freie Lösung, aber DNS-Management ist kritisch. Sobald du Tunnel-Domains außerhalb von Cloudflare verwaltest, bricht die Sicherheit.", it: "Cloudflare Tunnel è una grande soluzione senza firewall, ma la gestione DNS è critica. Nel momento in cui gestisci domini tunnel fuori da Cloudflare, la sicurezza si rompe.", fr: "Cloudflare Tunnel est une excellente solution sans firewall, mais la gestion DNS est critique. Au moment où vous gérez des domaines tunnel en dehors de Cloudflare, la sécurité est compromise." },
+
+  // Ships page
+  "ships.title": {
+    ko: "OTOBZ가 쉬핑한 것들",
+    en: "What OTOBZ Ships",
+    ja: "OTOBZがシッピングしたもの",
+    es: "Lo Que OTOBZ Envía",
+    de: "Was OTOBZ Versendet",
+    it: "Cosa Consegna OTOBZ",
+    fr: "Ce Qu'OTOBZ Livre",
+  },
+  "ships.description": {
+    ko: "최근 출시·기능·수정의 기록. 새 항목은 매 배포마다 자동으로 추가됩니다.",
+    en: "Record of recent launches, features, and fixes. New entries are added automatically on every deploy.",
+    ja: "直近のリリース・機能・修正の記録。新しい項目はデプロイごとに自動で追加されます。",
+    es: "Registro de lanzamientos, funciones y correcciones recientes. Las nuevas entradas se añaden automáticamente en cada despliegue.",
+    de: "Aufzeichnung aktueller Launches, Features und Fixes. Neue Einträge werden bei jedem Deploy automatisch hinzugefügt.",
+    it: "Registro di lanci, funzionalità e correzioni recenti. Le nuove voci vengono aggiunte automaticamente a ogni deploy.",
+    fr: "Registre des lancements, fonctionnalités et correctifs récents. Les nouvelles entrées sont ajoutées automatiquement à chaque déploiement.",
+  },
+  "ships.empty": {
+    ko: "아직 등록된 쉬핑이 없습니다",
+    en: "No ships logged yet",
+    ja: "まだ記録されたシッピングはありません",
+    es: "Aún no hay envíos registrados",
+    de: "Noch keine Einträge vorhanden",
+    it: "Ancora nessuna spedizione registrata",
+    fr: "Aucune expédition enregistrée pour le moment",
+  },
 };
 
 export function t(key: string, locale: Locale = DEFAULT_LOCALE): string {
