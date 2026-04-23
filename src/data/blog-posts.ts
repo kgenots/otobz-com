@@ -206,7 +206,7 @@ export const posts: Post[] = [
   {
     slug: "why-i-use-vast-for-gpu",
     titleKey: "blog.post.why-i-use-vast-for-gpu.title",
-    excerptKey: "blog.post.why-i-use-gpu.title",
+    excerptKey: "blog.post.why-i-use-vast-for-gpu.excerpt",
     date: "2026-04-15",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
     tags: ["GPU", "Cost Optimization"],

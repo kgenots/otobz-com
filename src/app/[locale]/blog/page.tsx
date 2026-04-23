@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogList from "@/components/BlogList";
@@ -13,7 +14,9 @@ export default async function BlogPage({
   return (
     <main>
       <Header locale={locale} />
-      <BlogList locale={locale} />
+      <Suspense fallback={null}>
+        <BlogList locale={locale} />
+      </Suspense>
       <Footer locale={locale} />
     </main>
   );
