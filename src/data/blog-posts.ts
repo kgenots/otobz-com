@@ -92,7 +92,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.fine-tuning-vast-ai.title",
     excerptKey: "blog.post.fine-tuning-vast-ai.excerpt",
     date: "2026-03-05",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
     tags: ["Fine-tuning", "Vast.ai"],
     sections: [
       {
@@ -208,7 +208,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.why-i-use-vast-for-gpu.title",
     excerptKey: "blog.post.why-i-use-vast-for-gpu.excerpt",
     date: "2026-04-15",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=1200&q=80",
     tags: ["GPU", "Cost Optimization"],
     sections: [
       {
@@ -239,7 +239,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.openclaw-state-management.title",
     excerptKey: "blog.post.openclaw-state-management.excerpt",
     date: "2026-04-22",
-    image: "https://images.unsplash.com/photo-1555949963-ff9ce0406031?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
     tags: ["OpenClaw", "Architecture"],
     sections: [
       {
@@ -270,7 +270,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.k3s-deploy-pipeline.title",
     excerptKey: "blog.post.k3s-deploy-pipeline.excerpt",
     date: "2026-04-18",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
     tags: ["Infrastructure", "CI/CD"],
     sections: [
       {
@@ -301,7 +301,7 @@ export const posts: Post[] = [
     titleKey: "blog.post.cloudflared-tunnel-security.title",
     excerptKey: "blog.post.cloudflared-tunnel-security.excerpt",
     date: "2026-04-12",
-    image: "https://images.unsplash.com/photo-1563986768609-322da138ed9e?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
     tags: ["Security", "Infrastructure"],
     sections: [
       {
