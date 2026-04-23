@@ -10,7 +10,7 @@ function detectLocale(req: NextRequest): string {
   return DEFAULT_LOCALE;
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const first = pathname.split("/")[1] ?? "";
   if ((LOCALES as readonly string[]).includes(first)) return NextResponse.next();
