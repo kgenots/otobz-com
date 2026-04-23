@@ -17,6 +17,10 @@ Rules for bot and humans:
   - summary_ko: ship-append-sweep CronJob 할로 피드백 루프 시작
   - summary_en: Launched ship-append-sweep CronJob halo feedback
 
+- `refactor: rename middleware.ts → proxy.ts (Next 16 convention)` — [otobz-com](https://github.com/kgenots/otobz-com)
+
+- `fix(ship-append-cron): SSH auth + npm devDeps install in pod` — [obot-infra](https://github.com/kgenots/obot-infra)
+
 ## 2026-04-19
 - `launch: obot-dashboard task queue + agent heartbeat pickup` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
   - summary_ko: 에이전트가 태스크를 들고 실행하는 큐 시스템 라이브.
