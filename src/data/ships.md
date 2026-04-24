@@ -47,6 +47,34 @@ Rules for bot and humans:
 
 - `fix: TP passive tracker 스크립트 제거 — 403/404 spam 정리` — [trip-otobz](https://github.com/kgenots/trip-otobz)
 
+- `feat(openclaw): add 5 role agents (marketer, pm, researcher, weekly-report, slack-summarizer)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: openclaw에 역할별 에이전트 5개 추가
+  - summary_en: Added 5 role agents to openclaw
+
+- `fix(obot-dashboard): probe path /api/health (middleware가 / 차단해 502)` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `fix(obot-dashboard): openclaw-data/agents mount readOnly 해제 (CRUD 쓰기 허용)` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `feat(openclaw): bootstrap merge configmap framework + state agents` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: 병합 configmap 및 상태 에이전트 프레임워크 추가
+  - summary_en: Added merge configmap framework and state agents
+
+- `feat(auth): Cloudflare Access edge-trust + per-user session isolation` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 엣지 트러스트로 사용자 세션 격리
+  - summary_en: Edge-trust auth with isolated user sessions
+
+- `fix(auth): add /api/health endpoint for kubelet probes` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `feat(agents): /agents index + /activity 내 세션 필터` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 에이전트 색인과 활동 세션 필터 추가
+  - summary_en: Agents index and activity session filtering
+
+- `feat(agents): CRUD from dashboard (POST create, DELETE soft)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 대시보드에서 에이전트 생성·삭제 가능
+  - summary_en: Create and delete agents directly from dashboard
+
+- `docs(agents): 배너·confirm 문구 갱신 (영구 반영 확정)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
 ## 2026-04-23
 - `launch: otobz.com live ships log + halo seeding plan` — [otobz-com](https://github.com/kgenots/otobz-com)
   - summary_ko: otobz.com에 쉬핑 로그 페이지 공개. halo 브랜드 시작점.
