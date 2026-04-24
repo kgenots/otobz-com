@@ -75,6 +75,26 @@ Rules for bot and humans:
 
 - `docs(agents): 배너·confirm 문구 갱신 (영구 반영 확정)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
 
+- `feat(obot-dashboard): mount claude-bridge-home for /usage aggregation` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: /usage 수집을 위해 claude-bridge-home 마운트
+  - summary_en: Mounted claude-bridge-home for /usage aggregation
+
+- `feat(ia): task-first 홈 + persona Tab + 사이드바 재편` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 홈이 task-first로 개편, persona Tab 추가, 사이드바 재편됨
+  - summary_en: Task-first home with persona Tab and new sidebar
+
+- `feat(artifacts): /artifacts 결과물 아카이브 + /concerns mine 필터` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 결과물 아카이브와 내 관심사 필터링
+  - summary_en: Archive artifacts and filter owned concerns added
+
+- `feat(usage): /usage Claude API 토큰·비용 집계 대시보드` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: /usage 대시보드로 Claude API 토큰·비용 관리
+  - summary_en: Added /usage dashboard for Claude API token costs
+
+- `fix(data): dedup 같은 sessionId 중복 반환 (cron job level + run level)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `refactor(ui): /pnl 제거 + /usage 로 통합` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
 ## 2026-04-23
 - `launch: otobz.com live ships log + halo seeding plan` — [otobz-com](https://github.com/kgenots/otobz-com)
   - summary_ko: otobz.com에 쉬핑 로그 페이지 공개. halo 브랜드 시작점.
