@@ -39,6 +39,14 @@ Rules for bot and humans:
   - summary_ko: impact.com Skyscanner 어필 env-gated 래퍼 준비
   - summary_en: Prepared env-gated impact.com Skyscanner wrapper
 
+- `fix: curator 기간 hard filter + empty state 힌트` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `fix: TP marker 521399 → 721495 (정확한 affiliate ID)` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `fix: TP marker 521399 → 721495 하드코딩 잔여 일괄 교체` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `fix: TP passive tracker 스크립트 제거 — 403/404 spam 정리` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
 ## 2026-04-23
 - `launch: otobz.com live ships log + halo seeding plan` — [otobz-com](https://github.com/kgenots/otobz-com)
   - summary_ko: otobz.com에 쉬핑 로그 페이지 공개. halo 브랜드 시작점.
