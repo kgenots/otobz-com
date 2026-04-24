@@ -31,6 +31,14 @@ Rules for bot and humans:
   - summary_ko: 날짜 선택, 어필 CTA, localStorage 개인화
   - summary_en: Date picker, appeal CTA, and local personalization
 
+- `fix: 어필 CTA 404 — 실제 검색 URL 패턴으로 교정` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `fix: Agoda URL = city page 패턴 + '왕복' 라벨 명확화` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `feat: impact.com Skyscanner 어필 래퍼 env-gated 준비` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: impact.com Skyscanner 어필 env-gated 래퍼 준비
+  - summary_en: Prepared env-gated impact.com Skyscanner wrapper
+
 ## 2026-04-23
 - `launch: otobz.com live ships log + halo seeding plan` — [otobz-com](https://github.com/kgenots/otobz-com)
   - summary_ko: otobz.com에 쉬핑 로그 페이지 공개. halo 브랜드 시작점.
