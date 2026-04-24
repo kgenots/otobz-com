@@ -8,6 +8,29 @@ Rules for bot and humans:
 - Other prefixes render as raw bullets without summaries.
 - Do NOT edit historical entries. Append only.
 
+## 2026-04-24
+- `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
+  - summary_en: Hook layer in main hero and lowest price badges
+
+- `fix: hero-summary를 flight_price_history 테이블로 전환` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `feat: AI 큐레이터 위젯 — 3문항 퀴즈 → 맞춤 추천 TOP3` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: AI 큐레이터가 3문항 퀴즈로 맞춤 TOP3 추천
+  - summary_en: AI curator recommends top 3 personalized picks
+
+- `feat: freshness 라벨 + "급락" 핫 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 신선도 라벨과 급락 핫 배지가 나갔어요
+  - summary_en: Freshness labels and sharp-drop hot badges
+
+- `feat: 인기 도시 카드 최저가순 정렬 + '저렴한 순' 라벨` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 인기 도시를 저렴한 순으로 정렬
+  - summary_en: Popular cities sorted cheapest first
+
+- `feat: 날짜 선택 + 어필 CTA + localStorage 개인화` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 날짜 선택, 어필 CTA, localStorage 개인화
+  - summary_en: Date picker, appeal CTA, and local personalization
+
 ## 2026-04-23
 - `launch: otobz.com live ships log + halo seeding plan` — [otobz-com](https://github.com/kgenots/otobz-com)
   - summary_ko: otobz.com에 쉬핑 로그 페이지 공개. halo 브랜드 시작점.
