@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogList from "@/components/BlogList";
+import { posts } from "@/data/blog-posts";
 import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n";
 
 // markdown filesystem: 새 글 추가 시 즉시 반영 (재빌드 없이 SSR)
@@ -18,7 +19,7 @@ export default async function BlogPage({
     <main>
       <Header locale={locale} />
       <Suspense fallback={null}>
-        <BlogList locale={locale} />
+        <BlogList locale={locale} posts={posts} />
       </Suspense>
       <Footer locale={locale} />
     </main>

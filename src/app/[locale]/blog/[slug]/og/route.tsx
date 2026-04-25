@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { posts } from "@/data/blog-posts";
 import { t, type Locale } from "@/lib/i18n";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const dynamic = "force-static";
 
 export async function GET(

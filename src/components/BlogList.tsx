@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { posts } from "@/data/blog-posts";
+import type { Post } from "@/data/blog-posts";
 import { t, type Locale } from "@/lib/i18n";
 
 function formatDate(dateStr: string, locale: Locale) {
@@ -9,9 +9,8 @@ function formatDate(dateStr: string, locale: Locale) {
   return d.toLocaleDateString(locale === "ko" ? "ko-KR" : locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
-const ALL_TAGS = [...new Set(posts.flatMap((p) => p.tags || []))];
-
-export default function BlogList({ locale }: { locale: Locale }) {
+export default function BlogList({ locale, posts }: { locale: Locale; posts: Post[] }) {
+  const ALL_TAGS = [...new Set(posts.flatMap((p) => p.tags || []))];
   const searchParams = useSearchParams();
   const router = useRouter();
   const paramTag = searchParams.get("tag");
