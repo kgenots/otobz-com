@@ -31,6 +31,18 @@ Rules for bot and humans:
 
 - `fix(wiki): 상세 페이지 가독성 개선 (간격·헤더·코드 padding)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
 
+- `feat(obot-dashboard): openclaw-shared mount RW (wiki/persona 직접 편집)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: Wiki/Persona 직접 편집 가능
+  - summary_en: Direct wiki/persona editing now available
+
+- `feat(maint): K3s CronJob bridge-tmp-cleanup (30일+ jsonl 삭제)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: 30일+ 오래된 bridge 임시 파일 정리
+  - summary_en: Automated cleanup for 30+ day old bridge files
+
+- `feat(editor): Monaco 기반 wiki·agent persona 직접 편집` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: Wiki·agent persona를 Monaco로 직접 편집
+  - summary_en: Edit wiki and agent personas with Monaco editor
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
