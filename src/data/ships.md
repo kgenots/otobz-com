@@ -107,6 +107,14 @@ Rules for bot and humans:
   - summary_ko: 마크다운 블로그 동적 렌더링 전환
   - summary_en: Markdown blog now uses dynamic rendering
 
+- `fix(content-pipeline): DRAFTS_DIR을 playbook/drafts → trip-blog/drafts 분리` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `feat(publish-pipeline): cover_image 자동 생성 통합 + image-pipeline 폐기` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: publish-pipeline에 cover_image 자동 생성 추가
+  - summary_en: Publish pipeline auto-generates cover images
+
+- `fix(middleware): x-internal-key bypass 추가 (service-to-service)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
