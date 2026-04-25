@@ -8,6 +8,29 @@ Rules for bot and humans:
 - Other prefixes render as raw bullets without summaries.
 - Do NOT edit historical entries. Append only.
 
+## 2026-04-25
+- `feat(openclaw): librarian + wiki-linter agent 등록` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: openclaw에 librarian + wiki-linter 에이전트 등록
+  - summary_en: Added librarian + wiki-linter agents to openclaw
+
+- `feat(wiki): LLM Wiki (Karpathy 패턴) 도입 — librarian agent + /wiki UI` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 라이브러리언 에이전트로 LLM 위키 제공
+  - summary_en: LLM Wiki with librarian agent & /wiki UI
+
+- `feat(chat): wiki context auto-injection toggle (📚 wiki ON/OFF)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+  - summary_ko: 위키 컨텍스트 자동 주입을 토글할 수 있어요
+  - summary_en: Wiki context auto-injection now toggleable
+
+- `fix(ui): 모바일 반응형 개선 (chat·artifacts·usage·agents·wiki·concerns)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `fix(ui): TabsList 모바일 horizontal scroll (schedule + agents/[id])` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `fix(chat): agent 선택 inline buttons → dropdown Select (12+ agents 모바일 대응)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `refactor(ui): AgentSelect 공통 컴포넌트 (chat·artifacts·activity·schedule)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `fix(wiki): 상세 페이지 가독성 개선 (간격·헤더·코드 padding)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
