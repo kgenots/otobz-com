@@ -91,6 +91,14 @@ Rules for bot and humans:
   - summary_ko: INTERNAL_API_KEY 보안 강화 완료
   - summary_en: Secured INTERNAL_API_KEY via shared secrets
 
+- `feat(otobz-com): hostPath mount /shared/otobz-blog 추가` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: otobz-blog hostPath 마운트 추가
+  - summary_en: Mounted /shared/otobz-blog to otobz-com
+
+- `fix(auth): /api/imgen/naver-gemini hardcode 제거, INTERNAL_API_KEY 우선` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
+
+- `fix(auth): /api/blog + /api/blog/generate-image hardcode 제거` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
