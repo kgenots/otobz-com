@@ -43,6 +43,36 @@ Rules for bot and humans:
   - summary_ko: Wiki·agent persona를 Monaco로 직접 편집
   - summary_en: Edit wiki and agent personas with Monaco editor
 
+- `feat(content): K3s CronJob image-pipeline (trip 블로그 이미지 자동 생성)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: K3s CronJob으로 trip 블로그 이미지 자동 생성
+  - summary_en: K3s CronJob auto-generates trip blog images
+
+- `chore(kustomize): register cronjob-image-pipeline` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `feat(content): K3s publish-pipeline — approved drafts → trip.otobz blog API` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: K3s가 승인된 초안을 trip.otobz 블로그 API로 발행
+  - summary_en: Approved drafts publish to trip.otobz blog via K3s
+
+- `feat(content): K3s link-verify — 발행 블로그 CTA 도시 mismatch 스캔` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: K3s 링크검증이 블로그 CTA 도시 불일치를 감지
+  - summary_en: K3s link-verify catches blog CTA city mismatches
+
+- `chore(kustomize): register cronjob-link-verify` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `feat(link-verify): 어필리에이트 링크 0개 detect (수익 누락 감지)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: 어필리에이트 링크 0개 감지로 수익 누락 방지
+  - summary_en: Detect zero affiliate links for missing revenue
+
+- `feat(affiliate): 쿠팡 파트너스 토큰 치환 헬퍼` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 쿠팡 파트너스 토큰 치환 헬퍼 추가
+  - summary_en: Added Coupang Partners token substitution helper
+
+- `fix: 어필리에이트 클릭 누수 3건` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `feat(affiliate): TP 단일 게이트 통합 — Hotellook/Aviasales` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: TP 단일 게이트로 Hotellook/Aviasales 통합
+  - summary_en: Hotellook/Aviasales unified on single TP gate
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
