@@ -10,6 +10,9 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+// markdown filesystem: 새 글 추가 시 즉시 반영 (재빌드 없이 SSR)
+export const dynamic = "force-dynamic";
+
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
