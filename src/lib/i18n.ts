@@ -136,7 +136,6 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   "blog.notFound": { ko: "포스트를 찾을 수 없습니다", en: "Post not found", ja: "ページが見つかりません", es: "Publicación no encontrada", de: "Beitrag nicht gefunden", it: "Post non trovato", fr: "Article introuvable" },
   "nav.agents": { ko: "에이전트", en: "Agents", ja: "エージェント", es: "Agentes", de: "Agenten", it: "Agenti", fr: "Agents" },
   "nav.services": { ko: "서비스", en: "Services", ja: "サービス", es: "Servicios", de: "Services", it: "Servizi", fr: "Services" },
-  "nav.ships": { ko: "쉬핑", en: "Ships", ja: "シッピング", es: "Envíos", de: "Lieferungen", it: "Spedizioni", fr: "Livraisons" },
   "nav.blog": { ko: "블로그", en: "Blog", ja: "ブログ", es: "Blog", de: "Blog", it: "Blog", fr: "Blog" },
   "nav.contact": { ko: "문의", en: "Contact", ja: "お問い合わせ", es: "Contacto", de: "Kontakt", it: "Contatti", fr: "Contact" },
   "contact.title": { ko: "문의하기", en: "Contact", ja: "お問い合わせ", es: "Contacto", de: "Kontakt", it: "Contatti", fr: "Contact" },
@@ -171,34 +170,6 @@ export const translations: Record<string, Partial<Record<Locale, string>>> = {
   // Blog: k3s-deploy-pipeline
   // Blog: cloudflared-tunnel-security
 
-  // Ships page
-  "ships.title": {
-    ko: "OTOBZ가 쉬핑한 것들",
-    en: "What OTOBZ Ships",
-    ja: "OTOBZがシッピングしたもの",
-    es: "Lo Que OTOBZ Envía",
-    de: "Was OTOBZ Versendet",
-    it: "Cosa Consegna OTOBZ",
-    fr: "Ce Qu'OTOBZ Livre",
-  },
-  "ships.description": {
-    ko: "최근 출시·기능·수정의 기록. 새 항목은 매 배포마다 자동으로 추가됩니다.",
-    en: "Record of recent launches, features, and fixes. New entries are added automatically on every deploy.",
-    ja: "直近のリリース・機能・修正の記録。新しい項目はデプロイごとに自動で追加されます。",
-    es: "Registro de lanzamientos, funciones y correcciones recientes. Las nuevas entradas se añaden automáticamente en cada despliegue.",
-    de: "Aufzeichnung aktueller Launches, Features und Fixes. Neue Einträge werden bei jedem Deploy automatisch hinzugefügt.",
-    it: "Registro di lanci, funzionalità e correzioni recenti. Le nuove voci vengono aggiunte automaticamente a ogni deploy.",
-    fr: "Registre des lancements, fonctionnalités et correctifs récents. Les nouvelles entrées sont ajoutées automatiquement à chaque déploiement.",
-  },
-  "ships.empty": {
-    ko: "아직 등록된 쉬핑이 없습니다",
-    en: "No ships logged yet",
-    ja: "まだ記録されたシッピングはありません",
-    es: "Aún no hay envíos registrados",
-    de: "Noch keine Einträge vorhanden",
-    it: "Ancora nessuna spedizione registrata",
-    fr: "Aucune expédition enregistrée pour le moment",
-  },
 };
 
 export function t(key: string, locale: Locale = DEFAULT_LOCALE): string {
