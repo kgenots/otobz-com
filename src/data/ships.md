@@ -99,6 +99,14 @@ Rules for bot and humans:
 
 - `fix(auth): /api/blog + /api/blog/generate-image hardcode 제거` — [trip-otobz](https://github.com/kgenots/trip-otobz)
 
+- `feat(blog): force-dynamic SSR (markdown 새 글 즉시 반영)` — [otobz-com](https://github.com/kgenots/otobz-com)
+  - summary_ko: 새 마크다운 글이 force-dynamic SSR로 즉시 반영됨
+  - summary_en: New posts appear instantly with force-dynamic SSR
+
+- `feat(blog): force-dynamic SSR for markdown filesystem` — [otobz-com](https://github.com/kgenots/otobz-com)
+  - summary_ko: 마크다운 블로그 동적 렌더링 전환
+  - summary_en: Markdown blog now uses dynamic rendering
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
