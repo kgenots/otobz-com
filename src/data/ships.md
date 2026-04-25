@@ -73,6 +73,24 @@ Rules for bot and humans:
   - summary_ko: TP 단일 게이트로 Hotellook/Aviasales 통합
   - summary_en: Hotellook/Aviasales unified on single TP gate
 
+- `feat(blog): markdown filesystem migration (legacy 9 → /shared/otobz-blog)` — [otobz-com](https://github.com/kgenots/otobz-com)
+  - summary_ko: 블로그가 /shared/otobz-blog로 마이그레이션됨
+  - summary_en: Blog markdown migrated to /shared/otobz-blog
+
+- `feat(ghost): remove blog.otobz.com Ghost CMS` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: blog.otobz.com Ghost CMS 제거 완료
+  - summary_en: Removed Ghost CMS from blog.otobz.com
+
+- `docs: remove Ghost/blog.otobz.com from architecture (제거 완료)` — [obot-infra](https://github.com/kgenots/obot-infra)
+
+- `feat(infisical): add /worker/shared sync (INTERNAL_API_KEY)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: Infisical /worker/shared 동기화 지원
+  - summary_en: Infisical /worker/shared sync enabled
+
+- `feat(secrets): INTERNAL_API_KEY shared-env-secret 통합 (hardcode 제거)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: INTERNAL_API_KEY 보안 강화 완료
+  - summary_en: Secured INTERNAL_API_KEY via shared secrets
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
