@@ -115,6 +115,50 @@ Rules for bot and humans:
 
 - `fix(middleware): x-internal-key bypass 추가 (service-to-service)` — [obot-dashboard](https://github.com/kgenots/obot-dashboard)
 
+- `feat(publish-pipeline): IndexNow ping 통합 (Bing/네이버 즉시 색인)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: IndexNow로 Bing·네이버 즉시 색인
+  - summary_en: Instant Bing and Naver indexing via IndexNow
+
+- `feat(trip-otobz): coupang-env-secret 통합 (Infisical /worker/coupang 동기화)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: Coupang 환경 설정을 Infisical과 자동 동기화
+  - summary_en: Integrated Coupang secrets syncing with Infisical
+
+- `feat(publish-pipeline): KO 발행 후 Gemini 자동 EN 번역 + DB 저장` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: KO 발행 후 Gemini 자동 EN 번역 및 DB 저장
+  - summary_en: Auto Gemini EN translation & DB save for KO publish
+
+- `feat(publish-pipeline): EN 번역을 Gemini → Claude CLI 로 전환 (호스트 OAuth 재사용)` — [obot-infra](https://github.com/kgenots/obot-infra)
+  - summary_ko: EN 번역을 Claude CLI로 전환
+  - summary_en: Switched EN translation to Claude CLI
+
+- `feat(seo): IndexNow API key 인증 파일 추가` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: IndexNow API 인증 지원 배포
+  - summary_en: Shipped IndexNow API authentication
+
+- `feat(monetize): 쿠팡 어필리에이트 박스 모든 블로그 글에 자동 삽입` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 쿠팡 어필리에이트 박스가 모든 블로그 글에 자동 삽입돼요
+  - summary_en: Coupang affiliate boxes auto-embed in all posts
+
+- `fix(coupang): lptag 이중 'AF' prefix 방지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `feat(analytics): 쿠팡 박스 클릭에 GA4 affiliate_click 이벤트 발사` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 쿠팡 박스 클릭을 GA4 affiliate_click으로 추적
+  - summary_en: Coupang box clicks tracked with GA4 affiliate_click
+
+- `fix(monetize): primary city 도쿄 디폴트 버그 수정 (수익 영향 큼)` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+
+- `feat(monetize): AdSense 광고 슬롯 3개 자동 삽입 (KO + EN, 글로벌)` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: AdSense 광고 슬롯 자동 삽입
+  - summary_en: Auto-insert AdSense ad slots
+
+- `feat(monetize): SafetyWing 여행자보험 박스 (글로벌, KO+EN)` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: SafetyWing 여행자보험 글로벌 출시
+  - summary_en: SafetyWing travel insurance now available globally
+
+- `feat(i18n): blog_posts 다국어 지원 (lang 컬럼) — EN 콘텐츠 DB 통합` — [trip-otobz](https://github.com/kgenots/trip-otobz)
+  - summary_ko: 블로그 포스트에 i18n 지원 추가
+  - summary_en: Added i18n support for blog posts
+
 ## 2026-04-24
 - `feat: 메인 히어로 훅 레이어 + 도시 카드 최저가 배지` — [trip-otobz](https://github.com/kgenots/trip-otobz)
   - summary_ko: 메인 히어로에 훅 레이어와 도시 카드 최저가 배지 추가
