@@ -1,0 +1,18 @@
+{
+  "$comment": "raw 매출/자산 액수 절대 추가 금지. % delta + agent contribution % + activity counts 만 허용. 매월 hand-edit.",
+  "month": "2026-04",
+  "delta_pct_vs_prev_month": 0,
+  "agent_contribution_pct": {
+    "pin": 20,
+    "wander": 20,
+    "echo": 20,
+    "tide": 20,
+    "otto": 20
+  },
+  "activity_counts": {
+    "posts_published": 0,
+    "trades_executed": 0,
+    "leads_captured": 0
+  },
+  "last_updated": "2026-04-26"
+}

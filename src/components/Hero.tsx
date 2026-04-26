@@ -1,4 +1,5 @@
 import { t, type Locale } from "@/lib/i18n";
+import PnlWidget from "@/components/PnlWidget";
 
 function ServiceCard({
   href,
@@ -41,11 +42,12 @@ export default function Hero({ locale }: { locale: Locale }) {
         />
       </div>
       <div className="max-w-5xl mx-auto relative">
-        <div className="flex items-center gap-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 mb-6">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-700">
             <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
             {t("hero.status", locale)}
           </span>
+          <PnlWidget locale={locale} />
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-[#101114] whitespace-pre-line">
           {t("hero.title1", locale)}
