@@ -14,6 +14,11 @@ const LABELS: Record<Locale, string> = {
   fr: "Français",
 };
 
+const SAAS_PRODUCTS = [
+  { slug: "dashboard", label: "obot-dashboard" },
+  { slug: "otldr", label: "otldr" },
+] as const;
+
 function swapLocale(pathname: string, next: Locale): string {
   const parts = pathname.split("/");
   if (parts.length >= 2 && (LOCALES as readonly string[]).includes(parts[1])) {
@@ -25,6 +30,7 @@ function swapLocale(pathname: string, next: Locale): string {
 
 export default function HeaderNav({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const [saasOpen, setSaasOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -39,8 +45,37 @@ export default function HeaderNav({ locale }: { locale: Locale }) {
     <>
       {/* Desktop nav */}
       <nav className="hidden sm:flex items-center gap-6 text-sm text-[#686b82]">
-        <a href={`/${locale}#agents`} className="hover:text-[#101114] transition-colors">{t("nav.agents", locale)}</a>
-        <a href={`/${locale}#service`} className="hover:text-[#101114] transition-colors">{t("nav.services", locale)}</a>
+        <a href={`/${locale}/agents`} className="hover:text-[#101114] transition-colors">{t("nav.agents", locale)}</a>
+        <a href={`/${locale}/pnl`} className="hover:text-[#101114] transition-colors">{t("nav.pnl", locale)}</a>
+        <div className="relative">
+          <button
+            onClick={() => setSaasOpen(!saasOpen)}
+            className="flex items-center gap-1 hover:text-[#101114] transition-colors"
+            aria-label={t("nav.saas", locale)}
+          >
+            <span>{t("nav.saas", locale)}</span>
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {saasOpen && (
+            <>
+              <div className="fixed inset-0 z-40" onClick={() => setSaasOpen(false)} />
+              <div className="absolute right-0 mt-2 w-48 rounded-lg border border-[#dedee5] bg-white shadow-lg z-50 py-1">
+                {SAAS_PRODUCTS.map((p) => (
+                  <a
+                    key={p.slug}
+                    href={`/${locale}/saas/${p.slug}`}
+                    className="block w-full text-left px-4 py-2 text-sm text-[#686b82] hover:text-[#7132f5] hover:bg-[#7132f5]/5 transition-colors"
+                    onClick={() => setSaasOpen(false)}
+                  >
+                    {p.label}
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
         <a href={`/${locale}/blog`} className="hover:text-[#101114] transition-colors">{t("nav.blog", locale)}</a>
         <a href={`/${locale}/contact`} className="hover:text-[#101114] transition-colors">{t("nav.contact", locale)}</a>
         <a href="https://trip.otobz.com" target="_blank" className="text-[#7132f5] hover:text-[#5741d8] transition-colors">
@@ -95,10 +130,21 @@ export default function HeaderNav({ locale }: { locale: Locale }) {
         {mobileOpen && (
           <>
             <div className="fixed inset-0 z-40 bg-white/80 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-            <div className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-[#dedee5] bg-white shadow-lg p-3 z-50">
+            <div className="absolute top-full right-0 mt-2 w-56 rounded-xl border border-[#dedee5] bg-white shadow-lg p-3 z-50">
               <div className="flex flex-col gap-1 text-sm">
-                <a href={`/${locale}#agents`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.agents", locale)}</a>
-                <a href={`/${locale}#service`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.services", locale)}</a>
+                <a href={`/${locale}/agents`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.agents", locale)}</a>
+                <a href={`/${locale}/pnl`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.pnl", locale)}</a>
+                <div className="px-3 py-1 text-xs uppercase tracking-wide text-[#9497a9]">{t("nav.saas", locale)}</div>
+                {SAAS_PRODUCTS.map((p) => (
+                  <a
+                    key={p.slug}
+                    href={`/${locale}/saas/${p.slug}`}
+                    className="px-5 py-2 text-[#686b82] hover:text-[#7132f5] hover:bg-[#7132f5]/5 rounded-lg transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {p.label}
+                  </a>
+                ))}
                 <a href={`/${locale}/blog`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.blog", locale)}</a>
                 <a href={`/${locale}/contact`} className="px-3 py-2 text-[#686b82] hover:text-[#101114] hover:bg-[#7132f5]/5 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>{t("nav.contact", locale)}</a>
                 <a href="https://trip.otobz.com" target="_blank" className="px-3 py-2 text-[#7132f5] hover:text-[#5741d8] rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>trip.otobz.com →</a>
