@@ -12,7 +12,7 @@ export type SaasProduct = {
 export const saasProducts: Record<string, SaasProduct> = {
   dashboard: {
     slug: "dashboard",
-    title: "obot-dashboard",
+    title: "otobz-dashboard",
     subtitle: "agent 운영 모니터링 SaaS",
     description: "단일테넌트 → 멀티테넌트 외판 대기 중",
     formId: TALLY_DASHBOARD_FORM_ID,

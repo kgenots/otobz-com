@@ -15,7 +15,7 @@ const LABELS: Record<Locale, string> = {
 };
 
 const SAAS_PRODUCTS = [
-  { slug: "dashboard", label: "obot-dashboard" },
+  { slug: "dashboard", label: "otobz-dashboard" },
   { slug: "otldr", label: "otldr" },
 ] as const;
 
